@@ -29,7 +29,7 @@ export default function About() {
   const printData = function () {
     const newArrayOfElement = dataArrivals.map(function (
       val: any,
-      index: Number
+      index: number
     ) {
       return (
         <div key={val.id}>
@@ -48,7 +48,7 @@ export default function About() {
 
   return (
     <div style={{ padding: "5rem 11rem" }}>
-      <p style={{ fontSize: "2rem", color: "black" }}>About Page</p>
+      <p className="text-2xl font-extrabold mb-10">About Page</p>
       <div style={{ display: "flex", gap: "1rem" }}>{printData()}</div>
     </div>
   );
