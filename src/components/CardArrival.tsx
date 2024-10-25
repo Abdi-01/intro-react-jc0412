@@ -1,12 +1,17 @@
 "use client";
 
-export default function CardArrival() {
+interface IArrival {
+  id?: number;
+  imgUrl?: string;
+  title?: string;
+  price?: number;
+}
+
+export default function CardArrival(props: IArrival) {
+  console.log("DATA FROM PARENT to CHILDREN by PROPS", props.title);
   return (
-    <div>
-      <img
-        alt="arrival"
-        src="https://images.unsplash.com/photo-1567016507665-356928ac6679?q=80&w=3280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      />
+    <div style={{ width: "12rem" }}>
+      <img alt="arrival" src={props.imgUrl} />
       <div
         style={{
           display: "flex",
@@ -15,8 +20,8 @@ export default function CardArrival() {
           padding: "1rem 0rem",
         }}
       >
-        <p>shofa torquise</p>
-        <p>$20</p>
+        <p>{props.title}</p>
+        <p>${props.price}</p>
       </div>
     </div>
   );
